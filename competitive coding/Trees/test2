@@ -1,0 +1,18 @@
+pq = []
+    res = ""
+    for k,v in ('a', A), ('b', B),('c',C):
+        heapq.heappush(pq, (-v,k))
+    prev, prek = 0, ''
+    while pq:
+        v,k = heapq.heappop(pq)
+        if prev:
+            heapq.heappush(pq,(prev,prek))
+            prv,prek = 0, ''
+        if res[-2:] == k * 2:
+            prev,prek = v,k
+        else:
+            res += k
+            if v != -1:
+                heapq.heappush(pq, (v+1, k))
+    return res
+    
